@@ -11,5 +11,5 @@ import Foundation
 class RootContainer: Containerable {
   var container: Containerable?
 
-  var services: [String : [Any]] = [:]
+  var services: [RootContainer.ServiceName : [RootContainer.Service]] = [:]
 }

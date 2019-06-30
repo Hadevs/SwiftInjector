@@ -13,10 +13,11 @@ class DIContainer: Container {
 
   init(parentContainer: Containerable? = nil) {
     self.parentContainer = parentContainer ?? RootContainer()
+    self.register()
   }
 
-  final func register<T: Any>(_ object: T) {
-    parentContainer.register(object)
+  final func register<T: Any>(_ registration: @escaping (() -> T)) {
+    parentContainer.register(registration)
   }
 
   final func resolve<T>() -> T? {

@@ -10,7 +10,7 @@ import XCTest
 @testable import SwiftInjector
 
 class ContainerableMainTests: XCTestCase {
-  let container: DIContainer = TestContainer()
+  let container = TestContainer()
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
   }
@@ -20,9 +20,7 @@ class ContainerableMainTests: XCTestCase {
   }
 
   func testExampleRegister_1() {
-    let vc = ViewController()
-    container.register(vc)
     let newVc: ViewController? = container.resolve()
-    XCTAssertEqual(vc, newVc)
+    XCTAssertEqual(container.vc, newVc)
   }
 }

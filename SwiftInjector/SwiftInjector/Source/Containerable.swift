@@ -9,27 +9,30 @@
 import Foundation
 
 protocol Containerable: class {
+  typealias ServiceName = String
+  typealias Service = (() -> Any)
   var container: Containerable? { get set }
 
-  var services: [String: [Any]] { get set }
+  var services: [ServiceName: [Service]] { get set }
 }
 
 extension Containerable {
   func resolve<T>() -> T? {
     let key = String(describing: T.self)
-    
-    let array = services[key] as? [T]
-    return array?.first
+
+    let array = services[key]
+    return array?.first?() as? T
   }
 
-  func register<T: Any>(_ object: T) {
+  func register<T: Any>(_ registration: @escaping (() -> T)) {
+    let object = registration()
     let key = String(describing: type(of: object))
     if let array = services[key] {
       var newArray = array
-      newArray.append(object)
+      newArray.append(registration)
       services[key] = newArray
     } else {
-      services[key] = [object]
+      services[key] = [registration]
     }
   }
 }
