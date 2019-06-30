@@ -8,12 +8,13 @@
 
 import Foundation
 
-class Container: Containerable {
-  var container: Containerable
+protocol Container: class {
+  var parentContainer: Containerable { get set }
+  func register()
+}
 
-  required init(container: Containerable) {
-    self.container = container
+extension Container {
+  func resolve<T>() -> T? {
+    return parentContainer.resolve()
   }
-
-  var services: [String : [Any]] = [:]
 }

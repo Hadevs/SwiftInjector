@@ -9,15 +9,17 @@
 import Foundation
 
 protocol Containerable: class {
-  var container: Containerable { get }
-  init(container: Containerable)
+  var container: Containerable? { get set }
 
   var services: [String: [Any]] { get set }
 }
 
 extension Containerable {
   func resolve<T>() -> T? {
-    return services[String(describing: self)] as? T
+    let key = String(describing: T.self)
+    
+    let array = services[key] as? [T]
+    return array?.first
   }
 
   func register<T: Any>(_ object: T) {
