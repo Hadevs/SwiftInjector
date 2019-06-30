@@ -11,8 +11,7 @@ import Foundation
 class TestContainer: DIContainer {
   let vc = ViewController()
   override func register() {
-    register {
-      return self.vc
-    }
+    register { TestClass() }
+    register { self.vc }
   }
 }

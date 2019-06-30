@@ -9,7 +9,15 @@
 import Foundation
 
 class RootContainer: Containerable {
+  var services: [ServiceName : [ContainerObject]] = [:]
+
+  var dispatchRegistrationGroup: DispatchGroup = DispatchGroup()
+
   var container: Containerable?
 
-  var services: [RootContainer.ServiceName : [RootContainer.Service]] = [:]
+  init() {
+    dispatchRegistrationGroup.notify(queue: .main) {
+      print("All properties have been successfully injected.")
+    }
+  }
 }

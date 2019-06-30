@@ -14,7 +14,7 @@ protocol Container: class {
 }
 
 extension Container {
-  func resolve<T>() -> T? {
+  func resolve<T: Containerable.Object>() -> T? {
     return parentContainer.resolve()
   }
 }

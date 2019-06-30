@@ -19,8 +19,15 @@ class ContainerableMainTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
 
-  func testExampleRegister_1() {
+  func testExampleRegister() {
     let newVc: ViewController? = container.resolve()
     XCTAssertEqual(container.vc, newVc)
+  }
+
+  func testExampleRegister_autoResolving() {
+    let newVc: ViewController? = container.resolve()
+    let testClass = newVc?.testClass
+    print(testClass)
+    XCTAssertTrue(true)
   }
 }
