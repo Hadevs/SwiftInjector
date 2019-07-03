@@ -9,15 +9,22 @@
 import Foundation
 
 class RootContainer: Containerable {
-  var services: [ServiceName : [ContainerObject]] = [:]
+  var recursiveNotResolvedObjects: [Object] = []
+
+  var relations: [RelationIn: [RelationOut]] = [:]
+  var services: [ServiceName: [ContainerObject]] = [:]
 
   var dispatchRegistrationGroup: DispatchGroup = DispatchGroup()
 
   var container: Containerable?
 
   init() {
+    let date = Date()
     dispatchRegistrationGroup.notify(queue: .main) {
-      print("All properties have been successfully injected.")
+
+      self.finishRegistrations()
+      let seconds = Date().timeIntervalSince(date)
+      print("All properties have been successfully injected for \(seconds) seconds.")
     }
   }
 }

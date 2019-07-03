@@ -10,4 +10,5 @@ import Foundation
 
 class TestClass {
   var name: String = "123"
+  weak var viewController: ViewController?
 }
