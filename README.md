@@ -5,9 +5,9 @@ SwiftInjector - library for dependency injection, maden for convinient and fast 
 ## Things already implemented:
 1. Auto registration and autoresolving
 Just for example:
-![alt text](example1.png)
-![alt text](example2.png)
-![alt text](example3.png)
+![alt text](example_1.png)
+![alt text](example_2.png)
+![alt text](example_3.png)
 
 2. Works even with private properties!
 3. Resolving and registration with 'name' parameter
