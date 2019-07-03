@@ -21,6 +21,7 @@
 		E676F73322C955B200DC1282 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73222C955B200DC1282 /* DIContainer.swift */; };
 		E676F73522C9688F00DC1282 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73422C9688F00DC1282 /* TestClass.swift */; };
 		E6BF5C6322CD2A32009A9331 /* SILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5C6222CD2A32009A9331 /* SILogger.swift */; };
+		E6BF5C6522CD45C0009A9331 /* RecursiveResolvingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5C6422CD45C0009A9331 /* RecursiveResolvingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E676F73222C955B200DC1282 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		E676F73422C9688F00DC1282 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		E6BF5C6222CD2A32009A9331 /* SILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILogger.swift; sourceTree = "<group>"; };
+		E6BF5C6422CD45C0009A9331 /* RecursiveResolvingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveResolvingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				E676F71A22C94F2E00DC1282 /* SwiftInjectorTests.swift */,
 				E676F72A22C9511200DC1282 /* ContainerableMainTests.swift */,
+				E6BF5C6422CD45C0009A9331 /* RecursiveResolvingTests.swift */,
 				E676F71C22C94F2E00DC1282 /* Info.plist */,
 			);
 			path = SwiftInjectorTests;
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6BF5C6522CD45C0009A9331 /* RecursiveResolvingTests.swift in Sources */,
 				E676F72B22C9511200DC1282 /* ContainerableMainTests.swift in Sources */,
 				E676F71B22C94F2E00DC1282 /* SwiftInjectorTests.swift in Sources */,
 			);

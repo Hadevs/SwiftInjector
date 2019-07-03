@@ -15,7 +15,6 @@ protocol Containerable: class {
   typealias RelationIn = String
   typealias RelationOut = String
 
-  var container: Containerable? { get set }
   var dispatchRegistrationGroup: DispatchGroup { get }
 
   var services: [ServiceName: [ContainerObject]] { get set }
@@ -48,6 +47,7 @@ extension Containerable {
     }
 
     if let object = array?.first?.object {
+      print(1)
       return object
     } else if let object = array?.first?.registration() {
 
@@ -78,7 +78,6 @@ extension Containerable {
     for object in recursiveNotResolvedObjects {
       autoresolve(on: object)
     }
-    recursiveNotResolvedObjects.removeAll()
   }
 
   private func autoresolve<T: Object>(on object: T) {
@@ -101,6 +100,7 @@ extension Containerable {
             return
           }
           if let value = resolveAny(typeString: typeString) {
+            print("I SETTED VALUE FOR \(typeString)")
             object_setIvar(object, ivar, value)
           }
         }

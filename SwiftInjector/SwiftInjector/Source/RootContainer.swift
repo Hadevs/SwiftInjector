@@ -16,7 +16,6 @@ class RootContainer: Containerable {
 
   var dispatchRegistrationGroup: DispatchGroup = DispatchGroup()
 
-  var container: Containerable?
 
   init() {
     let date = Date()
