@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
   var testClass: TestClass?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
   }
-
-
 }
 

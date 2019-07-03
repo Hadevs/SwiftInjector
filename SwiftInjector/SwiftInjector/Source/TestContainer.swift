@@ -10,8 +10,11 @@ import Foundation
 
 class TestContainer: DIContainer {
   let vc = ViewController()
+  let vc2 = ViewController()
+  
   override func register() {
     register { TestClass() }
-    register { self.vc }
+    register(name: "123") { self.vc }
+    register { self.vc2 }
   }
 }

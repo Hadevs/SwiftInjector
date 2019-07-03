@@ -19,17 +19,30 @@ protocol Containerable: class {
 }
 
 struct ContainerObject {
+  var name: String? = nil
   var registration: Containerable.Service
   var object: Containerable.Object? = nil
-  init(_ registration: @escaping Containerable.Service) {
+  init(_ registration: @escaping Containerable.Service, name: String? = nil) {
     self.registration = registration
+    self.name = name
   }
 }
 
 extension Containerable {
-  private func resolveAny(typeString: String) -> Object? {
+  private func resolveAny(typeString: String, name: String? = nil) -> Object? {
     // TODO: replace .first with more smart condition
-    let array = services[typeString]
+    let array: [ContainerObject]? = {
+      if let filterName = name {
+        return services[typeString]?.filter { $0.name == filterName }
+      } else {
+        return services[typeString]
+      }
+    }()
+
+    if (array?.count ?? 0) > 1 {
+      SILogger("Warning in \(typeString) resolving. You registered two different object for this type. Try to provide \"name\" argument while registering your object. But you will receive first object of all services you registered.").log()
+    }
+
     if let object = array?.first?.object {
       autoresolve(on: object)
       return object
@@ -46,9 +59,9 @@ extension Containerable {
     }
   }
 
-  func resolve<T: Object>() -> T? {
+  func resolve<T: Object>(name: String? = nil) -> T? {
     let key = String(describing: T.self)
-    let object = resolveAny(typeString: key) as? T
+    let object = resolveAny(typeString: key, name: name) as? T
     
     return object
   }
@@ -69,16 +82,17 @@ extension Containerable {
     }
   }
 
-  func register<T: Object>(_ registration: @escaping (() -> T)) {
+  func register<T: Object>(_ registration: @escaping (() -> T), name: String? = nil) {
+
     dispatchRegistrationGroup.enter()
     let object = registration()
     let key = String(describing: type(of: object))
     if let array = services[key] {
       var newArray = array
-      newArray.append(ContainerObject(registration))
+      newArray.append(ContainerObject(registration, name: name))
       services[key] = newArray
     } else {
-      services[key] = [ContainerObject(registration)]
+      services[key] = [ContainerObject(registration, name: name)]
     }
     dispatchRegistrationGroup.leave()
   }

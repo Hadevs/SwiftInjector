@@ -20,6 +20,7 @@
 		E676F73122C954BB00DC1282 /* TestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73022C954BB00DC1282 /* TestContainer.swift */; };
 		E676F73322C955B200DC1282 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73222C955B200DC1282 /* DIContainer.swift */; };
 		E676F73522C9688F00DC1282 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73422C9688F00DC1282 /* TestClass.swift */; };
+		E6BF5C6322CD2A32009A9331 /* SILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5C6222CD2A32009A9331 /* SILogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E676F73022C954BB00DC1282 /* TestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContainer.swift; sourceTree = "<group>"; };
 		E676F73222C955B200DC1282 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		E676F73422C9688F00DC1282 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		E6BF5C6222CD2A32009A9331 /* SILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E676F72622C94F4700DC1282 /* RootContainer.swift */,
+				E6BF5C6222CD2A32009A9331 /* SILogger.swift */,
 				E676F73022C954BB00DC1282 /* TestContainer.swift */,
 				E676F73222C955B200DC1282 /* DIContainer.swift */,
 				E676F72E22C9548B00DC1282 /* Container.swift */,
@@ -229,6 +232,7 @@
 				E676F73522C9688F00DC1282 /* TestClass.swift in Sources */,
 				E676F73322C955B200DC1282 /* DIContainer.swift in Sources */,
 				E676F70822C94F2B00DC1282 /* ViewController.swift in Sources */,
+				E6BF5C6322CD2A32009A9331 /* SILogger.swift in Sources */,
 				E676F72F22C9548B00DC1282 /* Container.swift in Sources */,
 				E676F72922C94F6000DC1282 /* Containerable.swift in Sources */,
 				E676F73122C954BB00DC1282 /* TestContainer.swift in Sources */,

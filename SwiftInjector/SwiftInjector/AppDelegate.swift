@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let newVc: ViewController? = container.resolve()
+    let newVc: ViewController? = container.resolve(name: "123")
     let testClass = newVc?.testClass
-    print(testClass)
 
+
+    print(testClass)
     return true
   }
 
