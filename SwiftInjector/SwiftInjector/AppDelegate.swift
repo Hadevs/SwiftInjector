@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let newVc: ViewController? = self.container.resolve(name: "123")
     let testClass = newVc?.testClass
-    #error("NOT FINISHED RECURSIVE RESOLVING. BECAUSE AFTER RESOLVING I DONT PASS NAME VARIABLE TO RESOLVE.")
+//    #error("NOT FINISHED RECURSIVE RESOLVING. BECAUSE AFTER RESOLVING I DONT PASS NAME VARIABLE TO RESOLVE.")
     print(testClass)
     return true
   }

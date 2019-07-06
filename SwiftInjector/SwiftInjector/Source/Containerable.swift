@@ -122,24 +122,13 @@ extension Containerable {
     }
   }
 
-  private func formattedString<T: Object>(of object: T) -> String {
+  // MARK: *TESTED*
+  func formattedString<T: Object>(of object: T) -> String {
     return String(describing: type(of: object)).replacingOccurrences(of: "Optional<", with: "").replacingOccurrences(of: ">", with: "")
   }
 
-  private func doesObjectHas(object: Object, propertyType: String) -> Bool {
-    let mirror = Mirror(reflecting: object)
-    for attr in mirror.children {
-      let objectType = type(of: attr.value)
-      let typeString = String(describing: objectType).replacingOccurrences(of: "Optional<", with: "").replacingOccurrences(of: ">", with: "")
-      if typeString == typeString {
-        return true
-      }
-    }
-
-    return false
-  }
-
-  private func property<T>(object: Object, propertyName: String) -> T? {
+  // MARK: *TESTED*
+  func property<T>(object: Object, propertyName: String) -> T? {
     let mirror = Mirror(reflecting: object)
     for attr in mirror.children {
       if attr.label == propertyName {
@@ -150,7 +139,9 @@ extension Containerable {
     return nil
   }
 
-  private func propertyName(by typeString: String, in object: Object) -> String? {
+  // MARK: *TESTED*
+  // Returns only first variable of type
+  func propertyName(by typeString: String, in object: Object) -> String? {
     let mirror = Mirror(reflecting: object)
     for attr in mirror.children {
       let propertyType = type(of: attr.value)
@@ -163,8 +154,8 @@ extension Containerable {
     return nil
   }
 
+  // MARK: *TESTED*
   func register<T: Object>(_ registration: @escaping (() -> T), name: String? = nil) {
-
     dispatchRegistrationGroup.enter()
     let object = registration()
     let key = String(describing: type(of: object))

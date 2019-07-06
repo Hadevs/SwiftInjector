@@ -39,28 +39,17 @@ class RecursiveResolvingTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
 
+  let container = TestContainer()
 
-  class TestingContainer_1: DIContainer {
-    let firstClass = FirstClass()
-    let secondClass = SecondClass()
-    override func register() {
-      register { self.firstClass }
-      register { self.secondClass }
-    }
-  }
-  let container = TestingContainer_1()
   func testClassToClassRegister() {
-
-    var firstClass: FirstClass? = container.resolve()
-    let secondClass: SecondClass? = container.resolve()
+    let firstClass: ViewController? = container.resolve()
+    let secondClass: TestClass? = container.resolve()
     print("---------")
-    print(firstClass, secondClass?.firstClass)
     print("---------")
     XCTAssertNotNil(firstClass)
     XCTAssertNotNil(secondClass)
-    XCTAssertNotNil(secondClass?.firstClass)
-    XCTAssertEqual(firstClass?.secondClass, secondClass)
-    XCTAssertEqual(secondClass?.firstClass, firstClass)
+    XCTAssertNotNil(secondClass?.viewController)
+    XCTAssertEqual(secondClass?.viewController, firstClass)
+    XCTAssertEqual(firstClass?.testClass, secondClass)
   }
-
 }
