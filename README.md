@@ -1,6 +1,13 @@
-# SwiftInjector
-SwiftInjector - library for dependency injection, maden for convinient and fast properties connection
 ![alt text](header.png)
+
+# SwiftInjector
+[![Swift](https://img.shields.io/badge/swift-language-orange.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/dependency--injection-convinient-brightgreen.svg)]()
+
+[![GitHub license](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Boerworz/Gagat/master/LICENSE)
+
+
+SwiftInjector - library for dependency injection, maden for convinient and fast properties connection
 
 ## Things already implemented:
 1. Auto registration and autoresolving
