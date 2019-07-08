@@ -8,24 +8,19 @@
 
 SwiftInjector - library for dependency injection, maden for convinient and fast properties connection
 
+## [How to use it? ](https://github.com/Hadevs/SwiftInjector/wiki)
+Go to the [wiki](https://github.com/Hadevs/SwiftInjector/wiki)!
+
 ## Things already implemented:
 1. Auto registration and autoresolving
-Just for example:
-![alt text](example_1.png)
-![alt text](example_2.png)
-![alt text](example_3.png)
-
+2. Manual registration
 2. Works even with private properties!
 3. Resolving and registration with 'name' parameter
 4. Classes each-to-each references without recursive crash (like in Swinject or DIP libraries)
+5. Wiki
 
 ## Things TO DO for first release
-1. Add manual registration and resolving
-2. Add certain registration by String Key or specific arguments
-3. Perfomance test
-4. 70% Code coverage
-5. Documentation
+1. Perfomance test
+2. 70% Code coverage
 
-## Rules
-1. Properties will be automatically injected only on your class, not your parent classes.
 ![alt text](footer.png)
