@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Containerable: class {
+protocol Containerable: class {
   typealias Object = AnyObject
   typealias ServiceName = String
   typealias Service = (() -> Object)

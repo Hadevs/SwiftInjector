@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DIContainer: Container {
+public class DIContainer: Container {
   var parentContainer: Containerable
 
   init(parentContainer: Containerable? = nil) {

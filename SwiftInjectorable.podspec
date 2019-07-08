@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
   spec.swift_version = ['4.2', '5.0']
   spec.name         = "SwiftInjectorable"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.1.1"
   spec.summary      = "SwiftInjector - library for dependency injection, maden for convinient and fast properties connection."
 
   # This description is used to generate tags and improve search results.
