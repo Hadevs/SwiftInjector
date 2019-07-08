@@ -16,8 +16,10 @@ class DIContainer: Container {
     self.register()
   }
 
-  final func register<T: Containerable.Object>(name: String? = nil, _ registration: @escaping (() -> T)) {
-    parentContainer.register(registration, name: name)
+  final func register<T: Containerable.Object>(registrationType: ContainerObject.RegistrationType = .automatic,
+                                               name: String? = nil,
+                                               _ registration: @escaping (() -> T)) {
+    parentContainer.register(registration, name: name, registrationType: registrationType)
   }
 
   final func resolve<T: Containerable.Object>(name: String? = nil) -> T? {

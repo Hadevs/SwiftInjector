@@ -23,15 +23,25 @@ protocol Containerable: class {
 }
 
 struct ContainerObject {
+  enum RegistrationType {
+    case manual
+    case automatic
+  }
   var name: String? = nil
+  var registrationType: RegistrationType
   var registration: Containerable.Service
   var object: Containerable.Object? = nil
-  init(_ registration: @escaping Containerable.Service, name: String? = nil) {
+  init(_ registration: @escaping Containerable.Service,
+       name: String? = nil,
+       registrationType: RegistrationType) {
     self.registration = registration
     self.name = name
+    self.registrationType = registrationType
   }
 }
 
+
+//MARK: TODO: MOVE IT TO DIContainer.swift
 extension Containerable {
   private func resolveAny(typeString: String, name: String? = nil) -> Object? {
     let array: [ContainerObject]? = {
@@ -57,8 +67,10 @@ extension Containerable {
       }
 
       services[typeString] = objects ?? []
-      autoresolve(on: object)
-      finishRegistrations()
+      if array?.first?.registrationType == .automatic {
+        autoresolve(on: object)
+        finishRegistrations()
+      }
 
       return object
     } else {
@@ -100,7 +112,6 @@ extension Containerable {
             return
           }
           if let value = resolveAny(typeString: typeString) {
-            print("I SETTED VALUE FOR \(typeString)")
             object_setIvar(object, ivar, value)
           }
         }
@@ -112,6 +123,8 @@ extension Containerable {
     return "\(Unmanaged.passUnretained(object).toOpaque())"
   }
 
+
+  // MARK: *TODO: Unable to test*
   private func recordRelations(relationIn: RelationIn, relationOut: RelationOut) {
     if let relationsOut = relations[relationIn], !relationsOut.contains(relationOut) {
       var newRelationsOut = relationsOut
@@ -155,16 +168,18 @@ extension Containerable {
   }
 
   // MARK: *TESTED*
-  func register<T: Object>(_ registration: @escaping (() -> T), name: String? = nil) {
+  func register<T: Object>(_ registration: @escaping (() -> T),
+                           name: String? = nil,
+                           registrationType: ContainerObject.RegistrationType = .automatic) {
     dispatchRegistrationGroup.enter()
     let object = registration()
     let key = String(describing: type(of: object))
     if let array = services[key] {
       var newArray = array
-      newArray.append(ContainerObject(registration, name: name))
+      newArray.append(ContainerObject(registration, name: name, registrationType: registrationType))
       services[key] = newArray
     } else {
-      services[key] = [ContainerObject(registration, name: name)]
+      services[key] = [ContainerObject(registration, name: name, registrationType: registrationType)]
     }
     dispatchRegistrationGroup.leave()
   }

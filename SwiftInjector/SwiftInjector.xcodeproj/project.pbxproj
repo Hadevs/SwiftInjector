@@ -22,11 +22,12 @@
 		E676F73522C9688F00DC1282 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676F73422C9688F00DC1282 /* TestClass.swift */; };
 		E6BF5C6322CD2A32009A9331 /* SILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5C6222CD2A32009A9331 /* SILogger.swift */; };
 		E6BF5C6522CD45C0009A9331 /* RecursiveResolvingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BF5C6422CD45C0009A9331 /* RecursiveResolvingTests.swift */; };
-		E6C8BEFF22CD592300D99B89 /* AutoRecursionContainer_2Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C8BEFE22CD592300D99B89 /* AutoRecursionContainer_2Parent.swift */; };
 		E6F3F57B22D11056003D86FA /* ContainerablePropertyNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F57A22D11056003D86FA /* ContainerablePropertyNameTests.swift */; };
 		E6F3F57D22D111CB003D86FA /* ContainerableRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F57C22D111CB003D86FA /* ContainerableRegisterTests.swift */; };
 		E6F3F57F22D11646003D86FA /* ContainerablePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F57E22D11646003D86FA /* ContainerablePropertyTests.swift */; };
 		E6F3F58122D117EE003D86FA /* ContainerableFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F58022D117EE003D86FA /* ContainerableFormattedStringTests.swift */; };
+		E6F3F59622D3516D003D86FA /* ContainerableRecordRelationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F59522D3516D003D86FA /* ContainerableRecordRelationsTests.swift */; };
+		E6F3F59A22D3783E003D86FA /* ContrainerableManualRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F59922D3783E003D86FA /* ContrainerableManualRegistrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +60,12 @@
 		E676F73422C9688F00DC1282 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		E6BF5C6222CD2A32009A9331 /* SILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILogger.swift; sourceTree = "<group>"; };
 		E6BF5C6422CD45C0009A9331 /* RecursiveResolvingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveResolvingTests.swift; sourceTree = "<group>"; };
-		E6C8BEFE22CD592300D99B89 /* AutoRecursionContainer_2Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRecursionContainer_2Parent.swift; sourceTree = "<group>"; };
 		E6F3F57A22D11056003D86FA /* ContainerablePropertyNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerablePropertyNameTests.swift; sourceTree = "<group>"; };
 		E6F3F57C22D111CB003D86FA /* ContainerableRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerableRegisterTests.swift; sourceTree = "<group>"; };
 		E6F3F57E22D11646003D86FA /* ContainerablePropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerablePropertyTests.swift; sourceTree = "<group>"; };
 		E6F3F58022D117EE003D86FA /* ContainerableFormattedStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerableFormattedStringTests.swift; sourceTree = "<group>"; };
+		E6F3F59522D3516D003D86FA /* ContainerableRecordRelationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerableRecordRelationsTests.swift; sourceTree = "<group>"; };
+		E6F3F59922D3783E003D86FA /* ContrainerableManualRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrainerableManualRegistrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				E676F71A22C94F2E00DC1282 /* SwiftInjectorTests.swift */,
+				E6F3F59922D3783E003D86FA /* ContrainerableManualRegistrationTests.swift */,
+				E6F3F59522D3516D003D86FA /* ContainerableRecordRelationsTests.swift */,
 				E676F72A22C9511200DC1282 /* ContainerableMainTests.swift */,
 				E6F3F57C22D111CB003D86FA /* ContainerableRegisterTests.swift */,
 				E6F3F58022D117EE003D86FA /* ContainerableFormattedStringTests.swift */,
@@ -138,7 +142,6 @@
 				E676F72622C94F4700DC1282 /* RootContainer.swift */,
 				E6BF5C6222CD2A32009A9331 /* SILogger.swift */,
 				E676F73022C954BB00DC1282 /* TestContainer.swift */,
-				E6C8BEFE22CD592300D99B89 /* AutoRecursionContainer_2Parent.swift */,
 				E676F73222C955B200DC1282 /* DIContainer.swift */,
 				E676F72E22C9548B00DC1282 /* Container.swift */,
 				E676F72822C94F6000DC1282 /* Containerable.swift */,
@@ -247,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6C8BEFF22CD592300D99B89 /* AutoRecursionContainer_2Parent.swift in Sources */,
 				E676F73522C9688F00DC1282 /* TestClass.swift in Sources */,
 				E676F73322C955B200DC1282 /* DIContainer.swift in Sources */,
 				E676F70822C94F2B00DC1282 /* ViewController.swift in Sources */,
@@ -267,7 +269,9 @@
 				E6F3F57F22D11646003D86FA /* ContainerablePropertyTests.swift in Sources */,
 				E6BF5C6522CD45C0009A9331 /* RecursiveResolvingTests.swift in Sources */,
 				E676F72B22C9511200DC1282 /* ContainerableMainTests.swift in Sources */,
+				E6F3F59A22D3783E003D86FA /* ContrainerableManualRegistrationTests.swift in Sources */,
 				E6F3F58122D117EE003D86FA /* ContainerableFormattedStringTests.swift in Sources */,
+				E6F3F59622D3516D003D86FA /* ContainerableRecordRelationsTests.swift in Sources */,
 				E6F3F57D22D111CB003D86FA /* ContainerableRegisterTests.swift in Sources */,
 				E676F71B22C94F2E00DC1282 /* SwiftInjectorTests.swift in Sources */,
 				E6F3F57B22D11056003D86FA /* ContainerablePropertyNameTests.swift in Sources */,
