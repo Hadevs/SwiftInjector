@@ -22,5 +22,6 @@ Go to the [wiki](https://github.com/Hadevs/SwiftInjector/wiki)!
 ## Things TO DO for first release
 1. Perfomance test
 2. 70% Code coverage
+3. SOA (Protocol-classes) registration and resolving support
 
 ![alt text](footer.png)
