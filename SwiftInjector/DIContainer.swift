@@ -9,24 +9,24 @@
 import Foundation
 
 open class DIContainer: Container {
-  var parentContainer: Containerable
+  open var parentContainer: Containerable
 
-  init(parentContainer: Containerable? = nil) {
+  public init(parentContainer: Containerable? = nil) {
     self.parentContainer = parentContainer ?? RootContainer()
     self.register()
   }
 
-  final func register<T: Containerable.Object>(registrationType: ContainerObject.RegistrationType = .automatic,
+  public final func register<T: Containerable.Object>(registrationType: ContainerObject.RegistrationType = .automatic,
                                                name: String? = nil,
                                                _ registration: @escaping (() -> T)) {
     parentContainer.register(registration, name: name, registrationType: registrationType)
   }
 
-  final func resolve<T: Containerable.Object>(name: String? = nil) -> T? {
+  public final func resolve<T: Containerable.Object>(name: String? = nil) -> T? {
     return parentContainer.resolve(name: name)
   }
 
-  func register() {
+  open func register() {
     // Mark: leave empty only in this class
   }
 }

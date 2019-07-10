@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Containerable: class {
+public protocol Containerable: class {
   typealias Object = AnyObject
   typealias ServiceName = String
   typealias Service = (() -> Object)
@@ -22,8 +22,8 @@ protocol Containerable: class {
   var recursiveNotResolvedObjects: [Object] { get set }
 }
 
-struct ContainerObject {
-  enum RegistrationType {
+public struct ContainerObject {
+  public enum RegistrationType {
     case manual
     case automatic
   }
@@ -42,7 +42,7 @@ struct ContainerObject {
 
 
 //MARK: TODO: MOVE IT TO DIContainer.swift
-extension Containerable {
+public extension Containerable {
   private func resolveAny(typeString: String, name: String? = nil) -> Object? {
     let array: [ContainerObject]? = {
       if let filterName = name {
