@@ -31,12 +31,15 @@ public struct ContainerObject {
   var registrationType: RegistrationType
   var registration: Containerable.Service
   var object: Containerable.Object? = nil
+  var type: Containerable.Object.Type
   init(_ registration: @escaping Containerable.Service,
        name: String? = nil,
-       registrationType: RegistrationType) {
+       registrationType: RegistrationType,
+       objectType: Containerable.Object.Type) {
     self.registration = registration
     self.name = name
     self.registrationType = registrationType
+    self.type = objectType
   }
 }
 
@@ -74,16 +77,30 @@ public extension Containerable {
 
       return object
     } else {
+      // There is no object with this protocol. (if it's really a protocol) Let's find out first class, conformable to protocol
+
+      for service in services {
+        for object in service.value {
+
+          let isConforms = (object.object as? TestClassProtocol) != nil || (object.registration() as? TestClassProtocol) != nil
+          if isConforms {
+            return resolveAny(typeString: service.key, name: name)
+          }
+        }
+      }
+
       return nil
     }
   }
 
-  func resolve<T: Object>(name: String? = nil) -> T? {
+  func resolve<T>(name: String? = nil, objectType: T.Type? = nil) -> T? {
     let key = String(describing: T.self)
+//    let protocolToResolve: Protocol? = objectType
     let object = resolveAny(typeString: key, name: name) as? T
     
     return object
   }
+
 
   func finishRegistrations() {
     relations = [:]
@@ -119,7 +136,7 @@ public extension Containerable {
     }
   }
 
-  private func memmoryAddress(_ object: Object) -> String {
+  func memmoryAddress(_ object: Object) -> String {
     return "\(Unmanaged.passUnretained(object).toOpaque())"
   }
 
@@ -176,10 +193,16 @@ public extension Containerable {
     let key = String(describing: type(of: object))
     if let array = services[key] {
       var newArray = array
-      newArray.append(ContainerObject(registration, name: name, registrationType: registrationType))
+      newArray.append(ContainerObject(registration,
+                                      name: name,
+                                      registrationType: registrationType,
+                                      objectType: T.self))
       services[key] = newArray
     } else {
-      services[key] = [ContainerObject(registration, name: name, registrationType: registrationType)]
+      services[key] = [ContainerObject(registration,
+                                       name: name,
+                                       registrationType: registrationType,
+                                       objectType: T.self)]
     }
     dispatchRegistrationGroup.leave()
   }
