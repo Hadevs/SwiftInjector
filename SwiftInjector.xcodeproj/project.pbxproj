@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6787CB022D6718F006B7C5B /* ContainerableProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6787CAF22D6718F006B7C5B /* ContainerableProtocolTests.swift */; };
+		E6787CBC22D75D02006B7C5B /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6787CBB22D75D02006B7C5B /* ProtocolViewController.swift */; };
+		E6787CBE22D75D11006B7C5B /* ProtocolTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6787CBD22D75D11006B7C5B /* ProtocolTestClass.swift */; };
 		E6F3F5AF22D37D28003D86FA /* SwiftInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F3F5A522D37D28003D86FA /* SwiftInjector.framework */; };
 		E6F3F5B422D37D28003D86FA /* SwiftInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3F5B322D37D28003D86FA /* SwiftInjectorTests.swift */; };
 		E6F3F5B622D37D28003D86FA /* SwiftInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = E6F3F5A822D37D28003D86FA /* SwiftInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6787CAF22D6718F006B7C5B /* ContainerableProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerableProtocolTests.swift; sourceTree = "<group>"; };
+		E6787CBB22D75D02006B7C5B /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
+		E6787CBD22D75D11006B7C5B /* ProtocolTestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTestClass.swift; sourceTree = "<group>"; };
 		E6F3F5A522D37D28003D86FA /* SwiftInjector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftInjector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F3F5A822D37D28003D86FA /* SwiftInjector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftInjector.h; sourceTree = "<group>"; };
 		E6F3F5A922D37D28003D86FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 				E6F3F5C222D37D9D003D86FA /* Container.swift */,
 				E6F3F5CC22D37DC4003D86FA /* TestClass.swift */,
 				E6F3F5CB22D37DC4003D86FA /* ViewController.swift */,
+				E6787CBB22D75D02006B7C5B /* ProtocolViewController.swift */,
+				E6787CBD22D75D11006B7C5B /* ProtocolTestClass.swift */,
 				E6F3F5BF22D37D9D003D86FA /* Containerable.swift */,
 				E6F3F5C022D37D9D003D86FA /* DIContainer.swift */,
 				E6F3F5C322D37D9D003D86FA /* RootContainer.swift */,
@@ -121,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E6F3F5B322D37D28003D86FA /* SwiftInjectorTests.swift */,
+				E6787CAF22D6718F006B7C5B /* ContainerableProtocolTests.swift */,
 				E6F3F5D522D37DE5003D86FA /* ContainerableFormattedStringTests.swift */,
 				E6F3F5CF22D37DE5003D86FA /* ContainerableMainTests.swift */,
 				E6F3F5D022D37DE5003D86FA /* ContainerablePropertyNameTests.swift */,
@@ -244,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6787CBC22D75D02006B7C5B /* ProtocolViewController.swift in Sources */,
 				E6F3F5CE22D37DC4003D86FA /* TestClass.swift in Sources */,
 				E6F3F5C722D37D9D003D86FA /* TestContainer.swift in Sources */,
 				E6F3F5C822D37D9D003D86FA /* Container.swift in Sources */,
@@ -251,6 +261,7 @@
 				E6F3F5CA22D37D9D003D86FA /* SILogger.swift in Sources */,
 				E6F3F5CD22D37DC4003D86FA /* ViewController.swift in Sources */,
 				E6F3F5C622D37D9D003D86FA /* DIContainer.swift in Sources */,
+				E6787CBE22D75D11006B7C5B /* ProtocolTestClass.swift in Sources */,
 				E6F3F5C522D37D9D003D86FA /* Containerable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +275,7 @@
 				E6F3F5D922D37DE5003D86FA /* ContainerablePropertyTests.swift in Sources */,
 				E6F3F5DE22D37DE5003D86FA /* ContrainerableManualRegistrationTests.swift in Sources */,
 				E6F3F5D722D37DE5003D86FA /* ContainerableMainTests.swift in Sources */,
+				E6787CB022D6718F006B7C5B /* ContainerableProtocolTests.swift in Sources */,
 				E6F3F5DC22D37DE5003D86FA /* ContainerableRegisterTests.swift in Sources */,
 				E6F3F5B422D37D28003D86FA /* SwiftInjectorTests.swift in Sources */,
 				E6F3F5DA22D37DE5003D86FA /* ContainerableRecordRelationsTests.swift in Sources */,
