@@ -23,5 +23,6 @@ Go to the [wiki](https://github.com/Hadevs/SwiftInjector/wiki)!
 1. Perfomance test
 2. 70% Code coverage
 3. SOA (Protocol-classes) registration and resolving support
+4. Memmory leaks check
 
 ![alt text](footer.png)
